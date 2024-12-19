@@ -7,6 +7,8 @@ const errorController = require('./controllers/error');
 const sequelize = require('./util/database');
 const Product = require('./models/product');
 const User = require('./models/user');
+const Cart = require('./models/cart');
+const CartItem = require('./models/cart-item');
 
 const app = express();
 
@@ -34,11 +36,21 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 
 // Define relationships between tables
-Product.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
+
+// An admin user can create many products
+Product.belongsTo(User, {constraints: true, onDelete: 'CASCADE'});
 User.hasMany(Product);
 
+// A user can have only one cart
+User.hasOne(Cart);
+Cart.belongsTo(User);
+
+// A cart can have many products and a product can be in many carts
+Cart.belongsToMany(Product, {through: CartItem});
+Product.belongsToMany(Cart, {through: CartItem});
+
 // Create tables based on models
-sequelize.sync()
+sequelize.sync({force: true})
   .then(result => {
     // create a dummy user
     User.findByPk(1).then(user => {
