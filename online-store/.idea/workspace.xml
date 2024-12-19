@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60822f50-b096-4e0a-ad10-112c2d38b4ea" name="Changes" comment="handling fetch and updating a product">
+    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="adding git ignore">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +33,9 @@
   }
 }]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
+  "associatedIndex": 1
 }]]></component>
-  <component name="ProjectId" id="2qQcedlf2Ml3Bxu7VcQWmqvwqBt" />
+  <component name="ProjectId" id="2qRR1KyoOWuCFfjGMvZlx9alXBz" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,6 +43,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -64,58 +67,29 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="60822f50-b096-4e0a-ad10-112c2d38b4ea" name="Changes" comment="" />
-      <created>1734598335932</created>
+      <changelist id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="" />
+      <created>1734623184224</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1734598335932</updated>
-      <workItem from="1734598336960" duration="6512000" />
+      <updated>1734623184224</updated>
+      <workItem from="1734623185254" duration="1053000" />
     </task>
-    <task id="LOCAL-00001" summary="adding metadata">
+    <task id="LOCAL-00001" summary="adding git ignore">
       <option name="closed" value="true" />
-      <created>1734598359260</created>
+      <created>1734623264278</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1734598359260</updated>
+      <updated>1734623264278</updated>
     </task>
-    <task id="LOCAL-00002" summary="removing sequelize codes&#10;adding mongodb setup&#10;handling product creation, fetch all and fetch one">
-      <option name="closed" value="true" />
-      <created>1734615263521</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1734615263521</updated>
-    </task>
-    <task id="LOCAL-00003" summary="handling fetch and updating a product">
-      <option name="closed" value="true" />
-      <created>1734616624193</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1734616624193</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding metadata" />
-    <MESSAGE value="removing sequelize codes&#10;adding mongodb setup&#10;handling product creation, fetch all and fetch one" />
-    <MESSAGE value="handling fetch and updating a product" />
-    <option name="LAST_COMMIT_MESSAGE" value="handling fetch and updating a product" />
+    <MESSAGE value="adding git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding git ignore" />
   </component>
 </project>
