@@ -1,3 +1,5 @@
+const mongodb = require('mongodb');
+
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
@@ -32,8 +34,7 @@ exports.getEditProduct = (req, res, next) => {
   const prodId = req.params.productId;
 
   // get editing product that belongs to the current user
-  req.user.getProducts({where: {id: prodId}}).then(products => {
-    const product = products[0];
+  Product.findById(prodId).then(product => {
     if (!product) {
       return res.redirect('/');
     }
@@ -55,13 +56,9 @@ exports.postEditProduct = (req, res, next) => {
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
 
-  Product.findByPk(prodId).then(product => {
-    product.title = updatedTitle;
-    product.price = updatedPrice;
-    product.imageUrl = updatedImageUrl;
-    product.description = updatedDesc;
-    return product.save();
-  }).then(result => {
+  const product = new Product(updatedTitle, updatedPrice, updatedDesc, updatedImageUrl, new mongodb.ObjectId(prodId));
+
+  product.save().then(result => {
     console.log('UPDATED PRODUCT!');
     res.redirect('/admin/products');
   }).catch(err => {
@@ -70,7 +67,7 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  req.user.getProducts().then(products => {
+  Product.fetchAll().then(products => {
     res.render('admin/products', {
       prods: products,
       pageTitle: 'Admin Products',
