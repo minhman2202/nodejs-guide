@@ -50,18 +50,25 @@ Cart.belongsToMany(Product, {through: CartItem});
 Product.belongsToMany(Cart, {through: CartItem});
 
 // Create tables based on models
-sequelize.sync({force: true})
+sequelize
+  .sync()
   .then(result => {
     // create a dummy user
-    User.findByPk(1).then(user => {
-      if (!user) {
-        return User.create({name: 'Kelvin', email: 'test@example.com'});
-      }
-      return Promise.resolve(user);
-    }).then(user => {
-      console.log(user);
-      app.listen(3000);
-    });
-  }).catch(err => {
-  console.log(err);
-});
+    return User.findByPk(1)
+  })
+  .then(user => {
+    if (!user) {
+      return User.create({name: 'Kelvin', email: 'test@example.com'});
+    }
+    return Promise.resolve(user);
+  })
+  .then(user => {
+    console.log(user);
+    return user.createCart();
+  })
+  .then(cart => {
+    app.listen(3000);
+  })
+  .catch(err => {
+    console.log(err);
+  });
