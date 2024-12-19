@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="associating product to the user who creates it">
+    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="adding product item to cart and show the cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/cart-item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/cart.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/includes/add-to-cart.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/includes/add-to-cart.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/shop/cart.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/shop/cart.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +70,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1734623184224</updated>
-      <workItem from="1734623185254" duration="3899000" />
+      <workItem from="1734623185254" duration="4336000" />
     </task>
     <task id="LOCAL-00001" summary="adding git ignore">
       <option name="closed" value="true" />
@@ -93,7 +88,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734624555596</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding product item to cart and show the cart">
+      <option name="closed" value="true" />
+      <created>1734627255861</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734627255861</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding git ignore" />
     <MESSAGE value="associating product to the user who creates it" />
-    <option name="LAST_COMMIT_MESSAGE" value="associating product to the user who creates it" />
+    <MESSAGE value="adding product item to cart and show the cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding product item to cart and show the cart" />
   </component>
 </project>
