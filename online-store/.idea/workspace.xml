@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="deleting item from cart">
-      <change afterPath="$PROJECT_DIR$/models/order.js" afterDir="false" />
+    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="Creating &amp; getting orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734623184224</updated>
       <workItem from="1734623185254" duration="4546000" />
-      <workItem from="1734658724934" duration="11770000" />
+      <workItem from="1734658724934" duration="13107000" />
     </task>
     <task id="LOCAL-00001" summary="adding git ignore">
       <option name="closed" value="true" />
@@ -200,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734670237817</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Creating &amp; getting orders">
+      <option name="closed" value="true" />
+      <created>1734671390594</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1734671390594</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +229,7 @@
     <MESSAGE value="adding product item to cart" />
     <MESSAGE value="loading the cart" />
     <MESSAGE value="deleting item from cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleting item from cart" />
+    <MESSAGE value="Creating &amp; getting orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating &amp; getting orders" />
   </component>
 </project>
