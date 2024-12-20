@@ -85,7 +85,7 @@ class User {
         .insertOne(order);
     }).then(result => {
       this.cart = {items: []};
-      return getDb().collection('users')
+      return db.collection('users')
         .updateOne(
           {_id: new ObjectId(this._id)},
           {
