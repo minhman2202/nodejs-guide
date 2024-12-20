@@ -69,7 +69,10 @@ exports.postEditProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  Product.find().then(products => {
+  Product.find()
+    .populate('userId', 'name') // populate the userId field with all the user data
+    .then(products => {
+      console.log(products);
     res.render('admin/products', {
       prods: products,
       pageTitle: 'Admin Products',
