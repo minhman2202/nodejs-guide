@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="associating user to product when creating">
+    <list default="true" id="388f5bf8-994c-434b-a412-2992a6ccad07" name="Changes" comment="fetching relations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/shop.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1734623184224</updated>
       <workItem from="1734623185254" duration="4546000" />
-      <workItem from="1734658724934" duration="8522000" />
+      <workItem from="1734658724934" duration="8903000" />
     </task>
     <task id="LOCAL-00001" summary="adding git ignore">
       <option name="closed" value="true" />
@@ -159,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734666926850</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fetching relations">
+      <option name="closed" value="true" />
+      <created>1734667406775</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734667406775</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +186,7 @@
     <MESSAGE value="deleting a product" />
     <MESSAGE value="adding &amp; using user model" />
     <MESSAGE value="associating user to product when creating" />
-    <option name="LAST_COMMIT_MESSAGE" value="associating user to product when creating" />
+    <MESSAGE value="fetching relations" />
+    <option name="LAST_COMMIT_MESSAGE" value="fetching relations" />
   </component>
 </project>
