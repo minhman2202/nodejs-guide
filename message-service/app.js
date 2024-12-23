@@ -56,14 +56,7 @@ mongoose.connect('mongodb+srv://kelvin:m33VFfqybmOYOP0J@cluster0.hkhdf.mongodb.n
     const server = app.listen(8080);
 
     // [MMN] setup websocket connection
-    const io = require('socket.io')(server, {
-      cors: {
-        origin: 'http://localhost:3000',
-        methods: ['GET', 'POST'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
-        credentials: true
-      }
-    });
+    const io = require('./socket').init(server);
     io.on('connection', socket => {
       console.log('Client connected');
     });
