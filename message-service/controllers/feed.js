@@ -15,7 +15,11 @@ exports.getPosts = async (req, res, next) => {
 
   try {
     const totalItems = await Post.find().countDocuments();
-    const posts = await Post.find().populate('creator').skip((currentPage - 1) * perPage).limit(perPage);
+    const posts = await Post.find()
+      .populate('creator')
+      .sort({createdAt: -1})
+      .skip((currentPage - 1) * perPage)
+      .limit(perPage);
 
     res.status(200).json({
       message: 'Fetched posts successfully.',
@@ -63,7 +67,10 @@ exports.createPost = async (req, res, next) => {
     await user.save();
 
     // [MMN] sending events to all connected clients
-    io.getIO().emit('posts', {action: 'create', post: {...post._doc, creator: {_id: req.userId, name: user.name}}});
+    io.getIO()
+      .emit('posts', {
+        action: 'create',
+        post: {...post._doc, creator: {_id: req.userId, name: user.name}}});
     res.status(201).json({
       message: 'Post created successfully!',
       post: post,
@@ -96,7 +103,7 @@ exports.getPost = (req, res, next) => {
     });
 };
 
-exports.updatePost = (req, res, next) => {
+exports.updatePost = async (req, res, next) => {
   const postId = req.params.postId;
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -119,7 +126,8 @@ exports.updatePost = (req, res, next) => {
     throw error;
   }
 
-  Post.findById(postId).then(post => {
+  try {
+    const post = await Post.findById(postId).populate('creator');
     if (!post) {
       const error = new Error('Could not find post.');
       error.statusCode = 404;
@@ -127,7 +135,7 @@ exports.updatePost = (req, res, next) => {
     }
 
     // [MMN] Check if the user is the creator of the post
-    if (post.creator.toString() !== req.userId) {
+    if (post.creator._id.toString() !== req.userId) {
       const error = new Error('Not authorized!');
       error.statusCode = 403;
       throw error;
@@ -137,22 +145,21 @@ exports.updatePost = (req, res, next) => {
       clearImage(post.imageUrl);
     }
 
-    if (imageUrl !== post.imageUrl) {
-      clearImage(post.imageUrl);
-    }
-
     post.title = title;
     post.imageUrl = imageUrl;
     post.content = content;
-    return post.save();
-  }).then(result => {
+    const result = await post.save();
+
+    // [MMN] sending events to all connected clients
+    io.getIO().emit('posts', {action: 'update', post: result});
+
     res.status(200).json({message: 'Post updated!', post: result});
-  }).catch(err => {
+  } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
     next(err);
-  });
+  }
 };
 
 exports.deletePost = (req, res, next) => {
