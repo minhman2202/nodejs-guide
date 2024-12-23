@@ -53,7 +53,20 @@ app.use((error, req, res, next) => {
 
 mongoose.connect('mongodb+srv://kelvin:m33VFfqybmOYOP0J@cluster0.hkhdf.mongodb.net/messages?retryWrites=true&w=majority&appName=Cluster0')
   .then(result => {
-    app.listen(8080);
+    const server = app.listen(8080);
+
+    // [MMN] setup websocket connection
+    const io = require('socket.io')(server, {
+      cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true
+      }
+    });
+    io.on('connection', socket => {
+      console.log('Client connected');
+    });
   })
   .catch(err => {
     console.log(err);
