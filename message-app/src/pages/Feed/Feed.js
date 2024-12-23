@@ -22,6 +22,7 @@ class Feed extends Component {
   };
 
   componentDidMount() {
+    // TODO: fetch current user's status (GET)
     fetch('URL')
       .then(res => {
         if (res.status !== 200) {
@@ -75,6 +76,7 @@ class Feed extends Component {
 
   statusUpdateHandler = event => {
     event.preventDefault();
+    // TODO: send current user status to backend (POST)
     fetch('URL')
       .then(res => {
         if (res.status !== 200 && res.status !== 201) {
