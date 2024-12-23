@@ -1,9 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const { validationResult } = require('express-validator');
+const {validationResult} = require('express-validator');
 
 const Post = require('../models/post');
+const User = require('../models/user');
 
 exports.getPosts = (req, res, next) => {
   // [MMN] pagination handling
@@ -45,25 +46,39 @@ exports.createPost = (req, res, next) => {
   const title = req.body.title;
   const content = req.body.content;
 
+  let creator;
   // Create post in db
   const post = new Post({
     title: title,
     content: content,
     imageUrl: imageUrl,
-    creator: {name: 'Kelvin'}
+    creator: req.userId
   });
-  post.save().then(result => {
-    console.log(result);
-    res.status(201).json({
-      message: 'Post created successfully!',
-      post: result
+
+  post
+    .save()
+    .then(result => {
+      return User.findById(req.userId);
+    })
+    .then(user => {
+      creator = user;
+      user.posts.push(post);
+      return user.save();
+    })
+    .then(result => {
+      console.log(result);
+      res.status(201).json({
+        message: 'Post created successfully!',
+        post: post,
+        creator: {_id: creator._id, name: creator.name}
+      });
+    })
+    .catch(err => {
+      if (!err.statusCode) {
+        err.statusCode = 500;
+      }
+      next(err);
     });
-  }).catch(err => {
-    if (!err.statusCode) {
-      err.statusCode = 500;
-    }
-    next(err);
-  });
 };
 
 exports.getPost = (req, res, next) => {
@@ -75,7 +90,7 @@ exports.getPost = (req, res, next) => {
         error.statusCode = 404;
         throw error;
       }
-      res.status(200).json({ message: 'Post fetched.', post: post });
+      res.status(200).json({message: 'Post fetched.', post: post});
     })
     .catch(err => {
       if (!err.statusCode) {
@@ -126,8 +141,8 @@ exports.updatePost = (req, res, next) => {
     post.imageUrl = imageUrl;
     post.content = content;
     return post.save();
-  }) .then(result => {
-    res.status(200).json({ message: 'Post updated!', post: result });
+  }).then(result => {
+    res.status(200).json({message: 'Post updated!', post: result});
   }).catch(err => {
     if (!err.statusCode) {
       err.statusCode = 500;
