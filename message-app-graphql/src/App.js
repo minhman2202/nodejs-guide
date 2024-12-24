@@ -120,7 +120,7 @@ class App extends Component {
   signupHandler = (event, authData) => {
     event.preventDefault();
     this.setState({authLoading: true});
-    // [MMN] construct the graphql query request
+     // [MMN] construct the graphql mutation request
     const graphqlQuery = {
       query: `
         mutation {
